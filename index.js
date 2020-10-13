@@ -26,7 +26,7 @@ class QuadPayClass {
     );
   };
   startCheckout = checkoutDetails => {
-    NativeModules.QuadPayBridge.startVirtualCheckout(
+    NativeModules.QuadPayBridge.startCheckout(
       checkoutDetails.amount,
       checkoutDetails.merchantReference,
       checkoutDetails.customerFirstName,
