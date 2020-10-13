@@ -29,7 +29,8 @@ environment = "development";
 locale = "US";
 QuadPay.initialize(merchantId, environment, locale);
 
-// Add details about what the customer and their order
+// Add details about the customer and their order
+//  these will be used to autofill fields during the QuadPay checkout
 order = {
   amount: "44.44",
   merchantReference: "custom-order-id",
