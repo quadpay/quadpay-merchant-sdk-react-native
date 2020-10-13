@@ -43,7 +43,11 @@ order = {
 
 // Register callbacks with the QuadPay library -- these will fire when the customer
 //  completes or cancels checkout
-QuadPay.onCheckoutSuccessful((cardholder, card) => console.log(cardholder, card));
+//  There is no need to "unregister" any of the callbacks
+QuadPay.onCheckoutSuccessful((successfulCheckout) => console.log(successfulCheckout));
+// Submit the card and cardholder details through your standard payment processor!
+
+// Handle edge cases
 QuadPay.onCheckoutCancelled(reason => console.log(reason));
 QuadPay.onCheckoutError(errorMessage => console.log(errorMessage));
 
