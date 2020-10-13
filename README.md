@@ -3,7 +3,11 @@ QuadPay SDK
 
 The QuadPay SDK enables you to offer buy-now-pay-later functionality in your iOS app!
 
-See: https://docs.quadpay.com/docs/mobile-sdk-ios, https://docs.quadpay.com/docs/mobile-sdk-android for details about what tthe native implementation looks like
+See:
+https://docs.quadpay.com/docs/mobile-sdk-ios
+https://docs.quadpay.com/docs/mobile-sdk-android
+
+for details about what the native implementation looks like
 
 Installation
 ============
