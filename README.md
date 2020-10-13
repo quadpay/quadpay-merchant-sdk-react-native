@@ -15,7 +15,55 @@ Installation
 The QuadPay SDK requires react-native >0.59 and uses autolinking -- no extra steps required.
 
 
-Virtual Check Example
+Standard Checkout Example
+=======
+
+```
+import { QuadPay } from "quadpay-merchant-sdk-react-native";
+
+...
+
+// Be sure to init the QuadPay library before making any calls!
+merchantId = "44444444-4444-4444-4444-444444444444";
+environment = "development";
+locale = "US";
+QuadPay.initialize(merchantId, environment, locale);
+
+// Add details about the customer and their order
+//  these will be used to autofill fields during the QuadPay checkout
+order = {
+  amount: "44.44",
+  merchantReference: "custom-order-id",
+  customerFirstName: "Quincy",
+  customerEmail: "<use a unique email>@<test>.com",
+  customerLastName: "Payman",
+  customerPhoneNumber: "+14076901147",
+  customerAddressLine1: "240 Meeker Ave",
+  customerAddressLine2: "Apt 35",
+  customerPostalCode: "11211",
+  customerCity: "Brooklyn",
+  customerState: "NY",
+  customerCountry: "US",
+};
+
+// Register callbacks with the QuadPay library -- these will fire when the customer
+//  completes or cancels checkout
+//  There is no need to "unregister" any of the callbacks
+QuadPay.onCheckoutSuccessful(orderId => console.log(orderId));
+// The user has completed checkout -- the order id must be used to confirm the transaction from the backend
+
+
+// Handle edge cases
+QuadPay.onCheckoutCancelled(reason => console.log(reason));
+QuadPay.onCheckoutError(errorMessage => console.log(errorMessage));
+
+// Open the QuadPay checkout view
+QuadPay.startCheckout(order);
+
+```
+
+
+Virtual Checkout Example
 =======
 
 ```
