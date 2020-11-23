@@ -1,4 +1,4 @@
-import { NativeModules, NativeEventEmitter } from "react-native";
+import { NativeModules, NativeEventEmitter, Platform } from "react-native";
 
 let QuadPayNativeSDK = NativeModules.QuadPayBridge;
 const quadpayNativeEmitter = new NativeEventEmitter(
@@ -7,7 +7,11 @@ const quadpayNativeEmitter = new NativeEventEmitter(
 
 class QuadPayClass {
   initialize = (merchantId, environment, locale) => {
-    QuadPayNativeSDK.initialize(merchantId, environment, locale);
+    let env = Platform.select({
+      ios: environment.toLowerCase(),
+      android: environment.toUpperCase()
+    });
+    QuadPayNativeSDK.initialize(merchantId, env, locale);
   };
   startVirtualCheckout = checkoutDetails => {
     NativeModules.QuadPayBridge.startVirtualCheckout(
