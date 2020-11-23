@@ -25,7 +25,7 @@ import { QuadPay } from "quadpay-merchant-sdk-react-native";
 
 // Be sure to init the QuadPay library before making any calls!
 merchantId = "44444444-4444-4444-4444-444444444444";
-environment = "development";
+environment = "SANDBOX";
 locale = "US";
 QuadPay.initialize(merchantId, environment, locale);
 
@@ -73,7 +73,7 @@ import { QuadPay } from "quadpay-merchant-sdk-react-native";
 
 // Be sure to init the QuadPay library before making any calls!
 merchantId = "44444444-4444-4444-4444-444444444444";
-environment = "development";
+environment = "SANDBOX";
 locale = "US";
 QuadPay.initialize(merchantId, environment, locale);
 
