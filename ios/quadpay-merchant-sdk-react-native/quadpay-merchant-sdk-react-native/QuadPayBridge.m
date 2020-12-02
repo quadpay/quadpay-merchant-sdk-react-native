@@ -52,7 +52,7 @@ bool hasListeners;
               @"firstName": customer.firstName,
               @"lastName": customer.lastName,
               @"address1": customer.address1,
-              @"address2": customer.address2
+              @"address2": customer.address2,
               @"city": customer.city,
               @"state": customer.state,
               @"postalCode": customer.postalCode,
@@ -90,7 +90,7 @@ bool hasListeners;
               @"firstName": customer.firstName,
               @"lastName": customer.lastName,
               @"address1": customer.address1,
-              @"address2": customer.address2
+              @"address2": customer.address2,
               @"city": customer.city,
               @"state": customer.state,
               @"postalCode": customer.postalCode,
