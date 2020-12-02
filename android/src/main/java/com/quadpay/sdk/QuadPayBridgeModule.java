@@ -18,6 +18,7 @@ import com.facebook.react.modules.core.DeviceEventManagerModule;
 
 import com.quadpay.quadpay.QuadPay;
 import com.quadpay.quadpay.QuadPayCard;
+import com.quadpay.quadpay.QuadPayCustomer;
 import com.quadpay.quadpay.QuadPayCardholder;
 import com.quadpay.quadpay.QuadPayCheckoutDetails;
 import com.quadpay.quadpay.QuadPayVirtualCheckoutDelegate;
@@ -46,6 +47,20 @@ class QuadPayBridgeSerializer {
         return params;
     }
 
+    public static WritableMap toWritableMap(QuadPayCustomer c) {
+        WritableMap params = Arguments.createMap();
+        params.putString("firstName", c.firstName);
+        params.putString("lastName", c.lastName);
+        params.putString("address1", c.address1);
+        params.putString("address2", c.address2);
+        params.putString("city", c.city);
+        params.putString("state", c.state);
+        params.putString("postalCode", c.postalCode);
+        params.putString("country", c.country);
+        params.putString("email", c.email);
+        params.putString("phoneNumber", c.phoneNumber);
+        return params;
+    }
 }
 
 public class QuadPayBridgeModule extends ReactContextBaseJavaModule implements ActivityEventListener, QuadPayVirtualCheckoutDelegate, QuadPayCheckoutDelegate {
@@ -193,17 +208,19 @@ public class QuadPayBridgeModule extends ReactContextBaseJavaModule implements A
     }
 
     @Override
-    public void checkoutSuccessful(QuadPayCard card, QuadPayCardholder cardholder) {
+    public void checkoutSuccessful(QuadPayCard card, QuadPayCardholder cardholder, QuadPayCustomer customer) {
         WritableMap params = Arguments.createMap();
         params.putMap("card", QuadPayBridgeSerializer.toWritableMap(card));
         params.putMap("cardholder", QuadPayBridgeSerializer.toWritableMap(cardholder));
+        params.putMap("customer", QuadPayBridgeSerializer.toWritableMap(customer));
         sendEvent("checkoutSuccessful", params);
     }
 
     @Override
-    public void checkoutSuccessful(String orderId) {
+    public void checkoutSuccessful(String orderId, QuadPayCustomer customer) {
         WritableMap params = Arguments.createMap();
         params.putString("orderId", orderId);
+        params.putMap("customer", QuadPayBridgeSerializer.toWritableMap(customer));
         sendEvent("checkoutSuccessful", params);
     }
 

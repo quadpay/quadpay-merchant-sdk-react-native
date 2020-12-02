@@ -43,16 +43,31 @@ bool hasListeners;
     }];
 }
 
-- (void)checkoutSuccessful:(nonnull QuadPayCheckoutViewController *)viewController orderId:(nonnull NSString *)orderId {
+- (void)checkoutSuccessful:(nonnull QuadPayCheckoutViewController *)viewController orderId:(nonnull NSString *)orderId customer:(nonnull QuadPayCustomer *)customer {
   [viewController dismissViewControllerAnimated:true completion:^ {
     if (hasListeners) {
-      [self sendEventWithName:@"checkoutSuccessful" body:@{ @"orderId": orderId}];
+      NSDictionary *body = @{
+          @"orderId": orderId,
+          @"customer": @{
+              @"firstName": customer.firstName,
+              @"lastName": customer.lastName,
+              @"address1": customer.address1,
+              @"address2": customer.address2
+              @"city": customer.city,
+              @"state": customer.state,
+              @"postalCode": customer.postalCode,
+              @"country": customer.country,
+              @"email": customer.email,
+              @"phoneNumber": customer.phoneNumber
+          }
+        };
+      [self sendEventWithName:@"checkoutSuccessful" body:body];
     }
   }];
 }
 
 
-- (void) checkoutSuccessful:(QuadPayVirtualCheckoutViewController*)viewController card:(nonnull QuadPayCard *)card cardholder:(nonnull QuadPayCardholder *)cardholder {
+- (void) checkoutSuccessful:(QuadPayVirtualCheckoutViewController*)viewController card:(nonnull QuadPayCard *)card cardholder:(nonnull QuadPayCardholder *)cardholder customer:(nonnull QuadPayCustomer *)customer {
     [viewController dismissViewControllerAnimated:true completion:^ {
       if (hasListeners) {
         NSDictionary *body = @{
@@ -70,6 +85,18 @@ bool hasListeners;
               @"name": cardholder.name,
               @"postalCode": cardholder.postalCode,
               @"state": cardholder.state
+          },
+          @"customer": @{
+              @"firstName": customer.firstName,
+              @"lastName": customer.lastName,
+              @"address1": customer.address1,
+              @"address2": customer.address2
+              @"city": customer.city,
+              @"state": customer.state,
+              @"postalCode": customer.postalCode,
+              @"country": customer.country,
+              @"email": customer.email,
+              @"phoneNumber": customer.phoneNumber
           }
         };
         [self sendEventWithName:@"checkoutSuccessful" body:body];
