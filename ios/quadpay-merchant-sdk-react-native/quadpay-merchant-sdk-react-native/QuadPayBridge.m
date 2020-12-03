@@ -79,12 +79,15 @@ bool hasListeners;
               @"number": card.number
           },
           @"cardholder": @{
+              @"firstName": cardholder.firstName,
+              @"lastName": cardholder.lastName,
               @"addressLine1": cardholder.addressLine1,
               @"addressLine2": cardholder.addressLine2,
               @"city": cardholder.city,
               @"name": cardholder.name,
               @"postalCode": cardholder.postalCode,
-              @"state": cardholder.state
+              @"state": cardholder.state,
+              @"country": cardholder.country
           },
           @"customer": @{
               @"firstName": customer.firstName,

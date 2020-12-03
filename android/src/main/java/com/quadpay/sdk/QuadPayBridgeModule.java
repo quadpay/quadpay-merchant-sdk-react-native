@@ -38,12 +38,15 @@ class QuadPayBridgeSerializer {
 
     public static WritableMap toWritableMap(QuadPayCardholder c) {
         WritableMap params = Arguments.createMap();
+        params.putString("firstName", c.firstName);
+        params.putString("lastName", c.lastName);
         params.putString("addressLine1", c.addressLine1);
         params.putString("addressLine2", c.addressLine2);
         params.putString("city", c.city);
         params.putString("name", c.name);
         params.putString("postalCode", c.postalCode);
         params.putString("state", c.state);
+        params.putString("country", c.country);
         return params;
     }
 
