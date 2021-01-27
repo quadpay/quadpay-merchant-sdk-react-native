@@ -125,7 +125,6 @@ RCT_EXPORT_METHOD(startVirtualCheckout:
                   customerState:(NSString*) customerState
                   customerCountry:(NSString*) customerCountry
                   merchantFeeForPaymentPlan:(NSString*) merchantFeeForPaymentPlan
-
     ) {
     dispatch_async(dispatch_get_main_queue(), ^{
       QuadPayCheckoutDetails* details = [QuadPayCheckoutDetails alloc];
