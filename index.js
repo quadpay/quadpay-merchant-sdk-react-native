@@ -27,6 +27,7 @@ class QuadPayClass {
       checkoutDetails.customerCity,
       checkoutDetails.customerState,
       checkoutDetails.customerCountry,
+      checkoutDetails.merchantFeeForPaymentPlan,
     );
   };
   startCheckout = checkoutDetails => {
@@ -43,6 +44,7 @@ class QuadPayClass {
       checkoutDetails.customerCity,
       checkoutDetails.customerState,
       checkoutDetails.customerCountry,
+      checkoutDetails.merchantFeeForPaymentPlan,
     );
   };
   onCheckoutCancelled(handler) {
