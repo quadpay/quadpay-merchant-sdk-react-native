@@ -47,6 +47,7 @@ order = {
   customerCity: "Brooklyn",
   customerState: "NY",
   customerCountry: "US",
+  merchantFeeForPaymentPlan: "0",
 };
 
 // Register callbacks with the QuadPay library -- these will fire when the customer
