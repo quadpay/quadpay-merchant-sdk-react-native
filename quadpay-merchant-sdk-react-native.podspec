@@ -19,5 +19,5 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.dependency "React"
-  s.dependency "QuadPaySDK", '~> 0.3.5'
+  s.dependency "QuadPaySDK", '~> 0.3.6'
 end
