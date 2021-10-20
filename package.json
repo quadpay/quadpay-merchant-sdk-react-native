@@ -1,7 +1,7 @@
 {
   "name": "quadpay-merchant-sdk-react-native",
   "title": "React Native QuadPay SDK",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "This library provides the ability to offer QuadPay as a payment in your app!",
   "main": "index.js",
   "scripts": {
