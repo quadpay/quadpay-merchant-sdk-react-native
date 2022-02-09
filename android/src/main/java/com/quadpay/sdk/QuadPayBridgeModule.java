@@ -220,7 +220,7 @@ public class QuadPayBridgeModule extends ReactContextBaseJavaModule implements A
         params.putMap("card", QuadPayBridgeSerializer.toWritableMap(card));
         params.putMap("cardholder", QuadPayBridgeSerializer.toWritableMap(cardholder));
         params.putMap("customer", QuadPayBridgeSerializer.toWritableMap(customer));
-        params.putString("orderId". orderId)
+        params.putString("orderId", orderId)
         sendEvent("checkoutSuccessful", params);
     }
 
