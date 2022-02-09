@@ -67,7 +67,7 @@ bool hasListeners;
 }
 
 
-- (void) checkoutSuccessful:(QuadPayVirtualCheckoutViewController*)viewController card:(nonnull QuadPayCard *)card cardholder:(nonnull QuadPayCardholder *)cardholder customer:(nonnull QuadPayCustomer *)customer {
+- (void) checkoutSuccessful:(QuadPayVirtualCheckoutViewController*)viewController card:(nonnull QuadPayCard *)card cardholder:(nonnull QuadPayCardholder *)cardholder customer:(nonnull QuadPayCustomer *)customer orderId:(nonnull NSString *)orderId {
     [viewController dismissViewControllerAnimated:true completion:^ {
       if (hasListeners) {
         NSDictionary *body = @{
@@ -100,7 +100,8 @@ bool hasListeners;
               @"country": customer.country,
               @"email": customer.email,
               @"phoneNumber": customer.phoneNumber
-          }
+          },
+          @"orderId": orderId
         };
         [self sendEventWithName:@"checkoutSuccessful" body:body];
       }
