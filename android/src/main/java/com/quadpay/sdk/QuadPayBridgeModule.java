@@ -215,11 +215,12 @@ public class QuadPayBridgeModule extends ReactContextBaseJavaModule implements A
     }
 
     @Override
-    public void checkoutSuccessful(QuadPayCard card, QuadPayCardholder cardholder, QuadPayCustomer customer) {
+    public void checkoutSuccessful(QuadPayCard card, QuadPayCardholder cardholder, QuadPayCustomer customer, String orderId) {
         WritableMap params = Arguments.createMap();
         params.putMap("card", QuadPayBridgeSerializer.toWritableMap(card));
         params.putMap("cardholder", QuadPayBridgeSerializer.toWritableMap(cardholder));
         params.putMap("customer", QuadPayBridgeSerializer.toWritableMap(customer));
+        params.putString("orderId", orderId)
         sendEvent("checkoutSuccessful", params);
     }
 
