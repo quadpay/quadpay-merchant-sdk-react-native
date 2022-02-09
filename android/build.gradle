@@ -35,7 +35,7 @@ repositories {
         url "$rootDir/../node_modules/react-native/android"
     }
     google()
-    jcenter()
+    mavencentral()
 }
 
 dependencies {
