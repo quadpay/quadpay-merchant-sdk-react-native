@@ -2,7 +2,7 @@
   "name": "quadpay-merchant-sdk-react-native",
   "title": "React Native QuadPay SDK",
   "version": "1.1.0",
-  "description": "This library provides the ability to offer QuadPay as a payment in your app!",
+  "description": "This library provides the ability to offer Zip (formally QuadPay) as a payment in your app!",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,8 +21,8 @@
     "ios"
   ],
   "author": {
-    "name": "Paul Sauer",
-    "email": "paul.sauer@quadpay.com"
+    "name": "Zip Co",
+    "email": "global-checkout@zip.co"
   },
   "license": "SEE LICENSE IN LICENSE FILE",
   "licenseFilename": "LICENSE",
