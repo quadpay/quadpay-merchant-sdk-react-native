@@ -6,6 +6,10 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		29A93D5128F6093800C6D3C6 /* QuadPayBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A93D4F28F6093800C6D3C6 /* QuadPayBridge.m */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		250428EC2534D27D0094A5A9 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -20,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		250428EE2534D27D0094A5A9 /* libquadpay-merchant-sdk-react-native.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libquadpay-merchant-sdk-react-native.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		29A93D4F28F6093800C6D3C6 /* QuadPayBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuadPayBridge.m; sourceTree = "<group>"; };
+		29A93D5028F6093800C6D3C6 /* QuadPayBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadPayBridge.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +58,8 @@
 		250428F02534D27D0094A5A9 /* quadpay-merchant-sdk-react-native */ = {
 			isa = PBXGroup;
 			children = (
+				29A93D5028F6093800C6D3C6 /* QuadPayBridge.h */,
+				29A93D4F28F6093800C6D3C6 /* QuadPayBridge.m */,
 			);
 			path = "quadpay-merchant-sdk-react-native";
 			sourceTree = "<group>";
@@ -112,6 +120,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29A93D5128F6093800C6D3C6 /* QuadPayBridge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
