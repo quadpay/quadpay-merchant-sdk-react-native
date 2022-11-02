@@ -188,4 +188,27 @@ RCT_EXPORT_METHOD(startCheckout:
     });
 }
 
+RCT_EXPORT_MOTHOD(createWidget:
+                    merchantId: (NSString*) merchantId
+                     grayLabel: (NSBoolean*) grayLabel
+                   displayMode: (NSString*) displayMode
+                isMFPPMerchant: (NSBoolean*) isMFPPMerchant
+                      minModal: (NSBoolean*) minModal
+                  learnMoreUrl: (NSString*) learnMoreUrl
+                    logoOption: (NSString*) logoOption
+                      logoSize: (NSString*) logoSize
+                          size: (NSString*) size
+                           min: (NSNumber*) min
+                           max: (NSNumber*) max
+                   totalAmount: (NSNumber*) totalAmount
+                    priceColor: (NSString*) priceColor
+                     alignment: (NSString*) alignment
+                     textColor: (NSString*) textColor
+                     linkColor: (NSString*) linkColor
+) {
+    PriceBreakdownView* widget = [PriceBreakdownView alloc];
+    widget.merchantId = merchantId;
+    return widget;
+}
+
 @end
