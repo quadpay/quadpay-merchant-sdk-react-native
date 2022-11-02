@@ -12,7 +12,7 @@ buildscript {
             jcenter()
         }
         dependencies {
-            classpath 'com.android.tools.build:gradle:3.5.0'
+            classpath 'com.android.tools.build:gradle:4.2.0'
         }
     }
 }
@@ -21,7 +21,7 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion safeExtGet('compileSdkVersion', 28)
-    buildToolsVersion safeExtGet('buildToolsVersion', '28.0.3')
+    buildToolsVersion safeExtGet('buildToolsVersion', '30.0.2')
     defaultConfig {
         minSdkVersion safeExtGet('minSdkVersion', 19)
         targetSdkVersion safeExtGet('targetSdkVersion', 28)
@@ -41,5 +41,5 @@ repositories {
 dependencies {
     //noinspection GradleDynamicVersion
     implementation 'com.facebook.react:react-native:+'  // From node_modules
-    implementation 'com.quadpay:quadpay:0.4.0@aar'
+    implementation 'com.quadpay:quadpay:0.4.5@aar'
 }
