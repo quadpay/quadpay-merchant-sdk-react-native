@@ -19,9 +19,8 @@ import {
 } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import * as eva from '@eva-design/eva';
-import Dropdown from './components/Dropdown/Dropdown';
-import Checkout from './components/Checkout/Checkout';
-import VirtualCheckout from './components/VirtualCheckout/VirtualCheckout';
+import { Dropdown, Checkout, VirtualCheckout, Widget } from './components';
+import { QuadPayWidget } from 'quadpay-merchant-sdk-react-native';
 
 /**
  * Use any valid `name` property from eva icons (e.g `github`, or `heart-outline`)
@@ -48,12 +47,12 @@ return(
   <>
     <IconRegistry icons={EvaIconsPack}/>
     <ApplicationProvider {...eva} theme={eva.light}>
-    
       <Layout style={styles.container}>
-      <Dropdown data= {environments} onSelect={setSelectedEnvironment}/>
-      <Dropdown data= {locales} onSelect={setSelectedLocale}/>
-      <Checkout locale={locale} environment={environment} merchantId ="5898b9a9-46bb-4647-92ed-52643d019d8c"/>
-      <VirtualCheckout locale={locale} environment={environment} merchantId ="5898b9a9-46bb-4647-92ed-52643d019d8c"/>
+        <Dropdown data= {environments} onSelect={setSelectedEnvironment}/>
+        <Dropdown data= {locales} onSelect={setSelectedLocale}/>
+        <Checkout locale={locale} environment={environment} merchantId ="5898b9a9-46bb-4647-92ed-52643d019d8c"/>
+        <VirtualCheckout locale={locale} environment={environment} merchantId ="5898b9a9-46bb-4647-92ed-52643d019d8c"/>
+        <QuadPayWidget />
       </Layout>
     </ApplicationProvider>
   </>

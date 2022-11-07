@@ -190,8 +190,10 @@ RCT_EXPORT_METHOD(startCheckout:
 
 RCT_EXPORT_MOTHOD(createWidget:
                     merchantId: (NSString*) merchantId
-                     grayLabel: (NSBoolean*) grayLabel
+                   totalAmount: (NSNumber*) totalAmount
+                     alignment: (NSString*) alignment
                    displayMode: (NSString*) displayMode
+                     grayLabel: (NSBoolean*) grayLabel
                 isMFPPMerchant: (NSBoolean*) isMFPPMerchant
                       minModal: (NSBoolean*) minModal
                   learnMoreUrl: (NSString*) learnMoreUrl
@@ -200,14 +202,27 @@ RCT_EXPORT_MOTHOD(createWidget:
                           size: (NSString*) size
                            min: (NSNumber*) min
                            max: (NSNumber*) max
-                   totalAmount: (NSNumber*) totalAmount
                     priceColor: (NSString*) priceColor
-                     alignment: (NSString*) alignment
                      textColor: (NSString*) textColor
                      linkColor: (NSString*) linkColor
 ) {
     PriceBreakdownView* widget = [PriceBreakdownView alloc];
-    widget.merchantId = merchantId;
+    widget.merchantId     = merchantId;
+    widget.grayLabel      = grayLabel;
+    widget.displayMode    = displayMode;
+    widget.isMFPPMerchant = isMFPPMerchant;
+    widget.minModal       = minModal;
+    widget.learnMoreUrl   = learnMoreUrl;
+    widget.logoOption     = logoOption;
+    widget.logoSize       = logoSize;
+    widget.size           = size;
+    widget.min            = min;
+    widget.max            = max;
+    widget.totalAmount    = totalAmount;
+    widget.priceColor     = priceColor;
+    widget.alignment      = alignment;
+    widget.textColor      = textColor;
+    widget.linkColor      = linkColors;
     return widget;
 }
 
