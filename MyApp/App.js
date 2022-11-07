@@ -22,6 +22,7 @@ import * as eva from '@eva-design/eva';
 import Dropdown from './components/Dropdown/Dropdown';
 import Checkout from './components/Checkout/Checkout';
 import VirtualCheckout from './components/VirtualCheckout/VirtualCheckout';
+import QuadpayWidget from 'quadpay-merchant-sdk-react-native/RNQuadpayWidget';
 
 /**
  * Use any valid `name` property from eva icons (e.g `github`, or `heart-outline`)
@@ -48,12 +49,19 @@ return(
   <>
     <IconRegistry icons={EvaIconsPack}/>
     <ApplicationProvider {...eva} theme={eva.light}>
-    
+     
       <Layout style={styles.container}>
-      <Dropdown data= {environments} onSelect={setSelectedEnvironment}/>
-      <Dropdown data= {locales} onSelect={setSelectedLocale}/>
-      <Checkout locale={locale} environment={environment} merchantId ="5898b9a9-46bb-4647-92ed-52643d019d8c"/>
-      <VirtualCheckout locale={locale} environment={environment} merchantId ="5898b9a9-46bb-4647-92ed-52643d019d8c"/>
+      <QuadpayWidget style = {styles.widget}
+      amount = "50"
+      merchantId = "9f7c8dcc-a546-45e4-a789-b65055abe0db"
+
+      >
+
+      </QuadpayWidget>
+      {/* <Dropdown data= {environments} onSelect={setSelectedEnvironment}/>
+      <Dropdown data= {locales} onSelect={setSelectedLocale}/> */}
+      <Checkout locale={"US"} environment={"Sandbox"} merchantId ="5898b9a9-46bb-4647-92ed-52643d019d8c"/>
+      <VirtualCheckout locale={"US"} environment={"Sandbox"} merchantId ="5898b9a9-46bb-4647-92ed-52643d019d8c"/>
       </Layout>
     </ApplicationProvider>
   </>
@@ -77,6 +85,11 @@ const styles = StyleSheet.create({
     borderRadius: 40,
     marginBottom:5,
     alignItems:'center'
+  },
+  widget: {
+    marginTop: 50,
+    height: 100,
+    width: 300,
   },
   likeButton: {
     marginVertical: 16,

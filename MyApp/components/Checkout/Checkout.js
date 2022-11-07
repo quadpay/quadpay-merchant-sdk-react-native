@@ -28,7 +28,7 @@ const Checkout =(props)=>{
           merchantFeeForPaymentPlan: "0",
         };
         QuadPay.initialize(merchantId,environment,locale)
-      
+        //console.log(QuadPay)
         QuadPay.startCheckout(order);
       
       }
