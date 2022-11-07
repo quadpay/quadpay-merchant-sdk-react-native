@@ -19,9 +19,6 @@ const CardInformation = (props) => {
   const [setCustomerFirstName] = useState(null);
   const [setCustomerLastName] = useState(null);
 
-  console.log("card month expiry",cardMonthExpiry)
-  console.log("card year expiry", cardYearExpiry)
-
   return (
     <SafeAreaView>
       <Card>

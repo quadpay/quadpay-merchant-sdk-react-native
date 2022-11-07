@@ -6,9 +6,7 @@ const Dropdown = (props)=>{
     const [selectedIndex, setSelectedIndex] = React.useState(new IndexPath(0));
 
     const displayValue = props.data[selectedIndex.row];
-
-
-
+    
     const renderOption = (item) => (
       <SelectItem key={item} title={item} onSelect={props.onSelect(displayValue)}/>
     );
