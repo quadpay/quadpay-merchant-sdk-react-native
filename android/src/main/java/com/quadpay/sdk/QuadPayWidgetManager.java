@@ -74,5 +74,20 @@ public class QuadPayWidgetManager extends SimpleViewManager<RNQuadPayWidget> {
         view.setLogoSize(text);
     }
 
+    @ReactProp(name = "isMFPPMerchant")
+    public void setIsMFPPMerchant(RNQuadPayWidget view, @Nullable String text){
+        view.setIsMFPPMerchant(text);
+    }
+
+    @ReactProp(name = "minModal")
+    public void setminModal(RNQuadPayWidget view, @Nullable String text){
+        view.setLogoSize(text);
+    }
+
+    @ReactProp(name = "learnMoreUrl")
+    public void setLearnMoreUrl(RNQuadPayWidget view, @Nullable String text){
+        view.setLearnMoreUrl(text);
+    }
+
     
 }
