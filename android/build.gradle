@@ -40,9 +40,8 @@ repositories {
 
 dependencies {
     //noinspection GradleDynamicVersion
-    implementation 'com.facebook.react:react-native:0.64.1'  // From node_modules
-    implementation ('com.quadpay:quadpay:0.5.7@aar') {
+    implementation 'com.facebook.react:react-native:0.64.4'  // From node_modules
+    implementation ('com.quadpay:quadpay:0.5.8@aar') {
         transitive = true
-       //exclude group:'androidx.appcompat', module: 'appcompat'
     }
 }

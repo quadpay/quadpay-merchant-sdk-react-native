@@ -12,11 +12,11 @@ import QuadPaySDK
 @objc(RNQuadPayWidgetManager)
 class RNQuadPayWidgetManager: RCTViewManager{
 
-    @objc var priceBreakdown2 = PriceBreakdownView()
+    @objc var quadpayWidget = QuadPayWidgetComponent()
    
     override func view() -> UIView!{
 
-        return priceBreakdown2
+        return quadpayWidget
     }
 
     override static func requiresMainQueueSetup() -> Bool {

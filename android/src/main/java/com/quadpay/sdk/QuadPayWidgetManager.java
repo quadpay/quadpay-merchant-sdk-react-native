@@ -1,6 +1,6 @@
 package com.quadpay.sdk;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
@@ -81,7 +81,7 @@ public class QuadPayWidgetManager extends SimpleViewManager<RNQuadPayWidget> {
 
     @ReactProp(name = "minModal")
     public void setminModal(RNQuadPayWidget view, @Nullable String text){
-        view.setLogoSize(text);
+        view.setMinModal(text);
     }
 
     @ReactProp(name = "learnMoreUrl")
