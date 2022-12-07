@@ -24,11 +24,6 @@ import Checkout from './components/Checkout/Checkout';
 import VirtualCheckout from './components/VirtualCheckout/VirtualCheckout';
 import QuadpayWidget from 'quadpay-merchant-sdk-react-native/RNQuadpayWidget';
 
-/**
- * Use any valid `name` property from eva icons (e.g `github`, or `heart-outline`)
- * https://akveo.github.io/eva-icons
- */
-
 
 export default function App(){
 
@@ -54,10 +49,9 @@ return(
       <QuadpayWidget style = {styles.widget}
       amount = "50"
       merchantId = "9f7c8dcc-a546-45e4-a789-b65055abe0db"
+      />
 
-      >
 
-      </QuadpayWidget>
       {/* <Dropdown data= {environments} onSelect={setSelectedEnvironment}/>
       <Dropdown data= {locales} onSelect={setSelectedLocale}/> */}
       <Checkout locale={"US"} environment={"Sandbox"} merchantId ="5898b9a9-46bb-4647-92ed-52643d019d8c"/>
