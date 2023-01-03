@@ -22,20 +22,20 @@ import * as eva from '@eva-design/eva';
 import Dropdown from './components/Dropdown/Dropdown';
 import Checkout from './components/Checkout/Checkout';
 import VirtualCheckout from './components/VirtualCheckout/VirtualCheckout';
-import QuadpayWidget from 'quadpay-merchant-sdk-react-native/RNQuadpayWidget';
+import ZipWidget from 'quadpay-merchant-sdk-react-native/ZipWidget';
 
 
 export default function App(){
-
- let environments = [
-   'CI - use sandbox since no merchant configured for ci yet',
-    'Sandbox'
-  ];
-
-  let locales= [
-    'US',
-    'MX'
-  ]
+  
+  let environments = [
+    'CI - use sandbox since no merchant configured for ci yet',
+     'Sandbox'
+   ];
+ 
+   let locales= [
+     'US',
+     'MX'
+   ]
 
 const [environment, setSelectedEnvironment] = useState(undefined);
 const [locale,setSelectedLocale] = useState(undefined)
@@ -46,9 +46,9 @@ return(
     <ApplicationProvider {...eva} theme={eva.light}>
      
       <Layout style={styles.container}>
-      <QuadpayWidget style = {styles.widget}
+      <ZipWidget style = {styles.widget}
       amount = "50"
-      merchantId = "9f7c8dcc-a546-45e4-a789-b65055abe0db"
+
       />
 
 

@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { requireNativeComponent } from 'react-native'
 
-class QuadpayWidget extends React.Component {
+class ZipWidget extends React.Component {
   render() {
-    return <RNQuadpayWidget {...this.props}/>
+    return <RNZipWidget {...this.props}/>
   }
 }
 
-QuadpayWidget.propTypes ={
+ZipWidget.propTypes ={
     merchantId: PropTypes.string,
     size: PropTypes.string,
     alignment: PropTypes.string,
@@ -25,7 +25,7 @@ QuadpayWidget.propTypes ={
     
 }
 
-QuadpayWidget.defaultProps = {
+ZipWidget.defaultProps = {
     size: "100%",
     alignment:"left",
     amount: "",
@@ -34,6 +34,6 @@ QuadpayWidget.defaultProps = {
     colorPrice: "#000000",
 }
 
-var RNQuadpayWidget = requireNativeComponent('RNQuadPayWidget',QuadpayWidget);
+var RNZipWidget = requireNativeComponent('RNQuadPayWidget',ZipWidget);
 
-export default QuadpayWidget;
+export default ZipWidget;
