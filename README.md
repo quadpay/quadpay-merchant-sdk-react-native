@@ -116,3 +116,25 @@ QuadPay.onCheckoutError(errorMessage => console.log(errorMessage));
 QuadPay.startVirtualCheckout(order);
 
 ```
+
+Widget Example
+=======
+```
+
+import  ZipWidget  from "quadpay-merchant-sdk-react-native/ZipWidget";
+
+...
+
+<ZipWidget
+  style={styles.widget}
+  alignment="center"
+  size="100"
+  logoSize="140"
+  isMFPPMerchant="true"
+  merchantId="9f7c8dcc-a546-45e4-a789-b65055abe0db"
+  max="20"
+  amount="30"
+  colorPrice="#BB361A"
+/>
+
+```
