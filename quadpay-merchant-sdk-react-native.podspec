@@ -12,12 +12,12 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/quadpay/quadpay-merchant-sdk-react-native"
   s.license			 = { :type => "mit", :file => "LICENSE" }
   s.authors      = { "Paul Sauer" => "paul.sauer@quadpay.com" }
-  s.ios.deployment_target		= '12.0'
+  s.ios.deployment_target		= '13.0'
   s.source       = { :git => "https://github.com/quadpay/quadpay-merchant-sdk-react-native.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,m,swift}"
   s.requires_arc = true
 
   s.dependency "React"
-  s.dependency "QuadPaySDK", '~> 0.5.13-beta'
+  s.dependency "QuadPaySDK", '~> 0.5.14-beta'
 end
