@@ -17,7 +17,6 @@ Pod::Spec.new do |s|
 
   s.source_files = "ios/**/*.{h,m,swift}"
   s.requires_arc = true
-
   s.dependency "React"
-  s.dependency "QuadPaySDK", '~> 0.5.14-beta'
+  s.dependency "QuadPaySDK", '~> 0.5.16-beta'
 end
