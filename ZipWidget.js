@@ -4,7 +4,7 @@ import { requireNativeComponent, StyleSheet } from 'react-native'
 
 class ZipWidget extends React.Component {
   render() {
-    return <RNZipWidget style={ZipWidget.styles} {...this.props}/>
+    return <RNZipWidget style={styles.ZipWidget} {...this.props}/>
   }
 }
 
@@ -34,9 +34,11 @@ ZipWidget.defaultProps = {
     colorPrice: "#000000",
 }
 
-ZipWidget.styles = StyleSheet.create({
-  height: 100,
-  width: 360,
+const styles = StyleSheet.create({
+  ZipWidget:{
+    height: 100,
+    width: '90%',
+  }
 })
 
 var RNZipWidget = requireNativeComponent('RNQuadPayWidget',ZipWidget);
