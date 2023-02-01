@@ -7,17 +7,16 @@ import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.annotations.ReactProp;
 import com.quadpay.quadpay.RNComponents.RNQuadPayPaymentWidget;
 
-public class QuadPayWidgetManager extends SimpleViewManager<RNQuadPayPaymentWidget> {
+public class QuadPayPaymentWidgetManager extends SimpleViewManager<RNQuadPayPaymentWidget> {
    @Override
    public String getName() {
        return "RNQuadPayPaymentWidget";
    }
    ReactApplicationContext mCallerContext;
 
-    public QuadPayWidgetManager(ReactApplicationContext reactContext) {
+    public QuadPayPaymentWidgetManager(ReactApplicationContext reactContext) {
         mCallerContext = reactContext;
     }
-
 
    @Override
    protected RNQuadPayPaymentWidget createViewInstance(ThemedReactContext reactContext) {
@@ -25,47 +24,47 @@ public class QuadPayWidgetManager extends SimpleViewManager<RNQuadPayPaymentWidg
    }
 
     @ReactProp(name = "merchantId")
-    public void setMerchantId(RNQuadPayWidget view, @Nullable String text) {
+    public void setMerchantId(RNQuadPayPaymentWidget view, @Nullable String text) {
         view.setMerchantId(text);
     }
 
     @ReactProp(name = "amount")
-    public void setAmount(RNQuadPayWidget view, @Nullable String text){
+    public void setAmount(RNQuadPayPaymentWidget view, @Nullable String text){
         view.setAmount(text);
     }
 
     @ReactProp(name = "timelineColor")
-    public void setColorPrice(RNQuadPayWidget view, @Nullable String text){
-        view.setColorPrice(text);
+    public void setTimelineColor(RNQuadPayPaymentWidget view, @Nullable String text){
+        view.setTimelineColor(text);
     }
 
     @ReactProp(name = "hideHeader")
-    public void setColorPrice(RNQuadPayWidget view, @Nullable String text){
-        view.setColorPrice(text);
+    public void setHideHeader(RNQuadPayPaymentWidget view, @Nullable String text){
+        view.setHideHeader(text);
     }
 
     @ReactProp(name = "hideSubtitle")
-    public void setColorPrice(RNQuadPayWidget view, @Nullable String text){
-        view.setColorPrice(text);
+    public void setHideSubtitle(RNQuadPayPaymentWidget view, @Nullable String text){
+        view.setHideSubtitle(text);
     }
 
     @ReactProp(name = "hideTimeline")
-    public void setColorPrice(RNQuadPayWidget view, @Nullable String text){
-        view.setColorPrice(text);
+    public void setHideTimeline(RNQuadPayPaymentWidget view, @Nullable String text){
+        view.setHideTimeline(text);
     }
 
     @ReactProp(name = "isMFPPMerchant")
-    public void setIsMFPPMerchant(RNQuadPayWidget view, @Nullable String text){
+    public void setIsMFPPMerchant(RNQuadPayPaymentWidget view, @Nullable String text){
         view.setIsMFPPMerchant(text);
     }
 
     @ReactProp(name = "minModal")
-    public void setminModal(RNQuadPayWidget view, @Nullable String text){
+    public void setMinModal(RNQuadPayPaymentWidget view, @Nullable String text){
         view.setMinModal(text);
     }
 
     @ReactProp(name = "learnMoreUrl")
-    public void setLearnMoreUrl(RNQuadPayWidget view, @Nullable String text){
+    public void setLearnMoreUrl(RNQuadPayPaymentWidget view, @Nullable String text){
         view.setLearnMoreUrl(text);
     }
 }

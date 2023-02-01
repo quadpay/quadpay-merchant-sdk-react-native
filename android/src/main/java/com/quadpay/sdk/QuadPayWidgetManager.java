@@ -80,7 +80,7 @@ public class QuadPayWidgetManager extends SimpleViewManager<RNQuadPayWidget> {
     }
 
     @ReactProp(name = "minModal")
-    public void setminModal(RNQuadPayWidget view, @Nullable String text){
+    public void setMinModal(RNQuadPayWidget view, @Nullable String text){
         view.setMinModal(text);
     }
 
