@@ -11,7 +11,7 @@
 @interface RCT_EXTERN_MODULE(RNQuadPayPaymentWidgetManager, RCTViewManager)
 RCT_EXPORT_VIEW_PROPERTY(amount, NSString)
 RCT_EXPORT_VIEW_PROPERTY(merchantId, NSString)
-RCT_EXPORT_VIEW_PROPERTY(timelapseColor, NSString)
+RCT_EXPORT_VIEW_PROPERTY(timelineColor, NSString)
 RCT_EXPORT_VIEW_PROPERTY(hideHeader, NSString)
 RCT_EXPORT_VIEW_PROPERTY(hideSubtitle, NSString)
 RCT_EXPORT_VIEW_PROPERTY(hideTimeline, NSString)

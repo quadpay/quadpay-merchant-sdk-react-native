@@ -5,12 +5,12 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.annotations.ReactProp;
-import com.quadpay.quadpay.RNComponents.RNQuadPayWidget;
+import com.quadpay.quadpay.RNComponents.RNQuadPayPaymentWidget;
 
-public class QuadPayWidgetManager extends SimpleViewManager<RNQuadPayWidget> {
+public class QuadPayWidgetManager extends SimpleViewManager<RNQuadPayPaymentWidget> {
    @Override
    public String getName() {
-       return "RNQuadPayWidget";
+       return "RNQuadPayPaymentWidget";
    }
    ReactApplicationContext mCallerContext;
 
@@ -20,8 +20,8 @@ public class QuadPayWidgetManager extends SimpleViewManager<RNQuadPayWidget> {
 
 
    @Override
-   protected RNQuadPayWidget createViewInstance(ThemedReactContext reactContext) {
-       return new RNQuadPayWidget(reactContext);
+   protected RNQuadPayPaymentWidget createViewInstance(ThemedReactContext reactContext) {
+       return new RNQuadPayPaymentWidget(reactContext);
    }
 
     @ReactProp(name = "merchantId")
@@ -34,44 +34,24 @@ public class QuadPayWidgetManager extends SimpleViewManager<RNQuadPayWidget> {
         view.setAmount(text);
     }
 
-    @ReactProp(name = "size")
-    public void setSize(RNQuadPayWidget view, @Nullable String text){
-        view.setSize(text);
-    }
-
-    @ReactProp(name = "alignment")
-    public void setAlignment(RNQuadPayWidget view, @Nullable String text){
-        view.setAlignment(text);
-    }
-
-    @ReactProp(name = "min")
-    public void setMin(RNQuadPayWidget view, @Nullable String text){
-        view.setMin(text);
-    }
-
-    @ReactProp(name = "max")
-    public void setMax(RNQuadPayWidget view, @Nullable String text){
-        view.setMax(text);
-    }
-
-    @ReactProp(name = "colorPrice")
+    @ReactProp(name = "timelineColor")
     public void setColorPrice(RNQuadPayWidget view, @Nullable String text){
         view.setColorPrice(text);
     }
 
-    @ReactProp(name = "logoOption")
-    public void setLogoOption(RNQuadPayWidget view, @Nullable String text){
-        view.setLogoOption(text);
+    @ReactProp(name = "hideHeader")
+    public void setColorPrice(RNQuadPayWidget view, @Nullable String text){
+        view.setColorPrice(text);
     }
 
-    @ReactProp(name = "displayMode")
-    public void setDisplayMode(RNQuadPayWidget view, @Nullable String text){
-        view.setDisplayMode(text);
+    @ReactProp(name = "hideSubtitle")
+    public void setColorPrice(RNQuadPayWidget view, @Nullable String text){
+        view.setColorPrice(text);
     }
 
-    @ReactProp(name = "logoSize")
-    public void setLogoSize(RNQuadPayWidget view, @Nullable String text){
-        view.setLogoSize(text);
+    @ReactProp(name = "hideTimeline")
+    public void setColorPrice(RNQuadPayWidget view, @Nullable String text){
+        view.setColorPrice(text);
     }
 
     @ReactProp(name = "isMFPPMerchant")
@@ -88,6 +68,4 @@ public class QuadPayWidgetManager extends SimpleViewManager<RNQuadPayWidget> {
     public void setLearnMoreUrl(RNQuadPayWidget view, @Nullable String text){
         view.setLearnMoreUrl(text);
     }
-
-    
 }
