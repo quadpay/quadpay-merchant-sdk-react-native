@@ -1,37 +1,22 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { requireNativeComponent, StyleSheet } from 'react-native'
 
-class ZipWidget extends React.Component {
-  render() {
-    return <RNZipWidget style={styles.ZipWidget} {...this.props}/>
-  }
-}
-
-ZipWidget.propTypes ={
-    merchantId: PropTypes.string,
-    size: PropTypes.string,
-    alignment: PropTypes.string,
-    amount: PropTypes.string,
-    min: PropTypes.string,
-    max: PropTypes.string,
-    colorPrice: PropTypes.string,
-    logoOption: PropTypes.string,
-    logoSize: PropTypes.string,
-    displayMode: PropTypes.string,
-    minModal: PropTypes.string,
-    isMFPPMerchant: PropTypes.string,
-    learnMoreUrl: PropTypes.string,
-    
-}
-
-ZipWidget.defaultProps = {
-    size: "100%",
-    alignment:"left",
-    amount: "",
-    min: "35",
-    max: "1500",
-    colorPrice: "#000000",
+function ZipWidget({merchantId,size,alignment,amount,min,max,colorPrice,logoOption,logoSize,displayMode,minModal,isMFPPMerchant,learnMoreUrl}) {
+  return <RNZipWidget style={styles.ZipWidget} 
+    merchantId = {merchantId}
+    size = {size}
+    alignment={alignment}
+    amount={amount}
+    min={min}
+    max={max}
+    colorPrice={colorPrice}
+    logoOption={logoOption}
+    logoSize = {logoSize}
+    displayMode = {displayMode}
+    minModal = {minModal}
+    isMFPPMerchant = {isMFPPMerchant}
+    learnMoreUrl = {learnMoreUrl}
+  />
 }
 
 const styles = StyleSheet.create({
