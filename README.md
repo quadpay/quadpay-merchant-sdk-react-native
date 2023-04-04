@@ -126,7 +126,6 @@ import  ZipWidget  from "quadpay-merchant-sdk-react-native/ZipWidget";
 ...
 
 <ZipWidget
-  style={styles.widget}
   alignment="center"
   size="100"
   logoSize="140"
@@ -135,6 +134,22 @@ import  ZipWidget  from "quadpay-merchant-sdk-react-native/ZipWidget";
   max="20"
   amount="30"
   colorPrice="#BB361A"
+/>
+
+```
+
+Payment Widget Example
+=======
+```
+
+import ZipPaymentWidget from 'quadpay-merchant-sdk-react-native/ZipPaymentWidget'
+
+...
+
+<ZipPaymentWidget
+  amount="100"
+  isMFPPMerchant ="true"
+  learnMoreUrl ={learnMoreUrl}
 />
 
 ```

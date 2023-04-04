@@ -5,7 +5,7 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.annotations.ReactProp;
-import com.quadpay.quadpay.RNQuadPayWidget;
+import com.quadpay.quadpay.RNComponents.RNQuadPayWidget;
 
 public class QuadPayWidgetManager extends SimpleViewManager<RNQuadPayWidget> {
    @Override
@@ -80,7 +80,7 @@ public class QuadPayWidgetManager extends SimpleViewManager<RNQuadPayWidget> {
     }
 
     @ReactProp(name = "minModal")
-    public void setminModal(RNQuadPayWidget view, @Nullable String text){
+    public void setMinModal(RNQuadPayWidget view, @Nullable String text){
         view.setMinModal(text);
     }
 

@@ -17,8 +17,9 @@ public class QuadPayBridgePackage implements ReactPackage {
 
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
-        return Collections.<ViewManager>singletonList(
-                new QuadPayWidgetManager(reactContext)
+        return Arrays.<ViewManager>asList(
+                new QuadPayWidgetManager(reactContext),
+                new QuadPayPaymentWidgetManager(reactContext)
         );
     }
 }

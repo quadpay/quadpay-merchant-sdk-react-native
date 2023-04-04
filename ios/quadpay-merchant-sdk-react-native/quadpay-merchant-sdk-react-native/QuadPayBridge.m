@@ -126,6 +126,7 @@ RCT_EXPORT_METHOD(startVirtualCheckout:
                   customerState:(NSString*) customerState
                   customerCountry:(NSString*) customerCountry
                   merchantFeeForPaymentPlan:(NSString*) merchantFeeForPaymentPlan
+                  checkoutFlow:(NSString*) checkoutFlow
     ) {
     dispatch_async(dispatch_get_main_queue(), ^{
       QuadPayCheckoutDetails* details = [QuadPayCheckoutDetails alloc];
@@ -142,6 +143,7 @@ RCT_EXPORT_METHOD(startVirtualCheckout:
         details.customerLastName = customerLastName;
         details.customerEmail = customerEmail;
         details.merchantFeeForPaymentPlan = merchantFeeForPaymentPlan;
+        details.checkoutFlow = checkoutFlow;
 
       QuadPayVirtualCheckoutViewController* view = [QuadPayVirtualCheckoutViewController startCheckout:self details:details];
           UIViewController *rootViewController = RCTPresentedViewController();
