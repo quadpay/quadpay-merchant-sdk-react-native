@@ -41,7 +41,7 @@ repositories {
 dependencies {
     //noinspection GradleDynamicVersion
     implementation 'com.facebook.react:react-native:+'  // From node_modules
-    implementation ('com.quadpay:quadpay:0.7.0@aar') {
+    implementation ('com.quadpay:quadpay:0.7.1@aar') {
         transitive = true
     }
 }
