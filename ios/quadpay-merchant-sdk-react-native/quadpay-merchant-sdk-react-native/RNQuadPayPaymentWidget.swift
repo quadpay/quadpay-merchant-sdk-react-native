@@ -11,7 +11,7 @@ import QuadPaySDK
 @objc(RNQuadPayPaymentWidgetManager)
 class RNQuadPayPaymentWidgetManager: RCTViewManager{
 
-    @objc var quadpayPaymentWidget = RNPaymentWidget()
+    @objc var quadpayPaymentWidget = PaymentWidget()
    
     override func view() -> UIView!{
         return quadpayPaymentWidget
