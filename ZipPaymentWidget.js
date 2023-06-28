@@ -1,12 +1,11 @@
 import React from 'react'
 import { requireNativeComponent, StyleSheet } from 'react-native'
 
-function ZipPaymentWidget({ merchantId,amount,timelineColor,hideHeader,hideSubtitle,hideTimeline,minModal,isMFPPMerchant,learnMoreUrl }){
+function ZipPaymentWidget({ merchantId,amount,timelineColor,hideSubtitle,hideTimeline,minModal,isMFPPMerchant,learnMoreUrl }){
   return <RNZipPaymentWidget style={ styles.PaymentWidget}
    merchantId = {merchantId}
    amount = {amount}
    timelineColor = {timelineColor}
-   hideHeader = {hideHeader}
    hideSubtitle = {hideSubtitle}
    hideTimeline = {hideTimeline}
    minModal = {minModal}
