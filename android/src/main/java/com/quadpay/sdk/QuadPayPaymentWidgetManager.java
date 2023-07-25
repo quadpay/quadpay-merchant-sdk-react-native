@@ -38,11 +38,6 @@ public class QuadPayPaymentWidgetManager extends SimpleViewManager<RNQuadPayPaym
         view.setTimelineColor(text);
     }
 
-    @ReactProp(name = "hideHeader")
-    public void setHideHeader(RNQuadPayPaymentWidget view, @Nullable String text){
-        view.setHideHeader(text);
-    }
-
     @ReactProp(name = "hideSubtitle")
     public void setHideSubtitle(RNQuadPayPaymentWidget view, @Nullable String text){
         view.setHideSubtitle(text);
