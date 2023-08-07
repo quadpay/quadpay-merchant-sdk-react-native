@@ -16,7 +16,7 @@ function ZipPaymentWidget({ merchantId,amount,timelineColor,hideSubtitle,hideTim
 
 const styles = StyleSheet.create({
   PaymentWidget:{
-    height: 170,
+    height: 210,
     width: '90%',
   }
 })
