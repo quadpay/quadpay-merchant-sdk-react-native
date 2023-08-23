@@ -46,6 +46,7 @@ class QuadPayClass {
       checkoutDetails.customerState,
       checkoutDetails.customerCountry,
       checkoutDetails.merchantFeeForPaymentPlan,
+      checkoutDetails.checkoutFlow,
     );
   };
   onCheckoutCancelled(handler) {

@@ -138,7 +138,8 @@ public class QuadPayBridgeModule extends ReactContextBaseJavaModule implements A
             String customerCity,
             String customerState,
             String customerCountry,
-            String merchantFeeForPaymentPlan
+            String merchantFeeForPaymentPlan,
+            String checkoutFlow
     ) {
         this.isVirtual = false;
         final QuadPayCheckoutDetails details = new QuadPayCheckoutDetails();
@@ -155,6 +156,7 @@ public class QuadPayBridgeModule extends ReactContextBaseJavaModule implements A
         details.customerState = customerState;
         details.customerCountry = customerCountry;
         details.merchantFeeForPaymentPlan = merchantFeeForPaymentPlan;
+        details.checkoutFlow = checkoutFlow;
 
         new Handler(Looper.getMainLooper()).post(new Runnable() {
             @Override
