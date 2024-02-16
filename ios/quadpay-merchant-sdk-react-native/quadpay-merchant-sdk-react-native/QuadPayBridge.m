@@ -10,7 +10,7 @@
 @implementation QuadPayBridge
 RCT_EXPORT_MODULE();
 
-bool hasListeners;
+static bool hasListeners = NO;
 
 -(void)startObserving {
     hasListeners = YES;
