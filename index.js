@@ -1,9 +1,9 @@
 import { NativeModules, NativeEventEmitter, Platform } from "react-native";
 
 let QuadPayNativeSDK = NativeModules.QuadPayBridge;
-const quadpayNativeEmitter = new NativeEventEmitter(
-  NativeModules.QuadPayBridge,
-);
+console.log('NativeModules.QuadPayBridge:', QuadPayNativeSDK);
+
+const quadpayNativeEmitter = QuadPayNativeSDK ? new NativeEventEmitter(QuadPayNativeSDK) : null;
 
 class QuadPayClass {
   initialize = (merchantId, environment, locale) => {
@@ -14,7 +14,7 @@ class QuadPayClass {
     QuadPayNativeSDK.initialize(merchantId, env, locale);
   };
   startVirtualCheckout = checkoutDetails => {
-    NativeModules.QuadPayBridge.startVirtualCheckout(
+    QuadPayNativeSDK.startVirtualCheckout(
       checkoutDetails.amount,
       checkoutDetails.merchantReference,
       checkoutDetails.customerFirstName,
@@ -32,7 +32,7 @@ class QuadPayClass {
     );
   };
   startCheckout = checkoutDetails => {
-    NativeModules.QuadPayBridge.startCheckout(
+    QuadPayNativeSDK.startCheckout(
       checkoutDetails.amount,
       checkoutDetails.merchantReference,
       checkoutDetails.customerFirstName,
@@ -50,19 +50,31 @@ class QuadPayClass {
     );
   };
   onCheckoutCancelled(handler) {
-    quadpayNativeEmitter.removeAllListeners("checkoutCancelled");
-    quadpayNativeEmitter.addListener("checkoutCancelled", handler);
+    if (quadpayNativeEmitter) {
+      quadpayNativeEmitter.removeAllListeners("checkoutCancelled");
+      quadpayNativeEmitter.addListener("checkoutCancelled", handler);
+    }
   }
   onCheckoutSuccessful(handler) {
-    quadpayNativeEmitter.removeAllListeners("checkoutSuccessful");
-    quadpayNativeEmitter.addListener("checkoutSuccessful", handler);
+    if (quadpayNativeEmitter) {
+      quadpayNativeEmitter.removeAllListeners("checkoutSuccessful");
+      quadpayNativeEmitter.addListener("checkoutSuccessful", handler);
+    }
   }
   onCheckoutError(handler) {
-    quadpayNativeEmitter.removeAllListeners("checkoutError");
-    quadpayNativeEmitter.addListener("checkoutError", handler);
+    if (quadpayNativeEmitter) {
+      quadpayNativeEmitter.removeAllListeners("checkoutError");
+      quadpayNativeEmitter.addListener("checkoutError", handler);
+    }
   }
 }
 
-let QuadPay = new QuadPayClass();
+let QuadPay = null;
+
+if (QuadPayNativeSDK) {
+  QuadPay = new QuadPayClass();
+} else {
+  console.error('QuadPayBridge module is not defined');
+}
 
 export { QuadPay };
