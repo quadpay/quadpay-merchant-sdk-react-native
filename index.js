@@ -13,7 +13,8 @@ class QuadPayClass {
     });
     QuadPayNativeSDK.initialize(merchantId, env, locale);
   };
-  startVirtualCheckout = checkoutDetails => {
+
+  startVirtualCheckout = (checkoutDetails) => {
     QuadPayNativeSDK.startVirtualCheckout(
       checkoutDetails.amount,
       checkoutDetails.merchantReference,
@@ -31,7 +32,8 @@ class QuadPayClass {
       checkoutDetails.checkoutFlow,
     );
   };
-  startCheckout = checkoutDetails => {
+
+  startCheckout = (checkoutDetails) => {
     QuadPayNativeSDK.startCheckout(
       checkoutDetails.amount,
       checkoutDetails.merchantReference,
@@ -49,22 +51,42 @@ class QuadPayClass {
       checkoutDetails.checkoutFlow,
     );
   };
+
   onCheckoutCancelled(handler) {
     if (quadpayNativeEmitter) {
       quadpayNativeEmitter.removeAllListeners("checkoutCancelled");
-      quadpayNativeEmitter.addListener("checkoutCancelled", handler);
+      this.checkoutCancelledListener = quadpayNativeEmitter.addListener("checkoutCancelled", handler);
     }
   }
+
   onCheckoutSuccessful(handler) {
     if (quadpayNativeEmitter) {
       quadpayNativeEmitter.removeAllListeners("checkoutSuccessful");
-      quadpayNativeEmitter.addListener("checkoutSuccessful", handler);
+      this.checkoutSuccessfulListener = quadpayNativeEmitter.addListener("checkoutSuccessful", handler);
     }
   }
+
   onCheckoutError(handler) {
     if (quadpayNativeEmitter) {
       quadpayNativeEmitter.removeAllListeners("checkoutError");
-      quadpayNativeEmitter.addListener("checkoutError", handler);
+      this.checkoutErrorListener = quadpayNativeEmitter.addListener("checkoutError", handler);
+    }
+  }
+
+  removeListeners() {
+    if (quadpayNativeEmitter) {
+      if (this.checkoutCancelledListener) {
+        this.checkoutCancelledListener.remove();
+        this.checkoutCancelledListener = null;
+      }
+      if (this.checkoutSuccessfulListener) {
+        this.checkoutSuccessfulListener.remove();
+        this.checkoutSuccessfulListener = null;
+      }
+      if (this.checkoutErrorListener) {
+        this.checkoutErrorListener.remove();
+        this.checkoutErrorListener = null;
+      }
     }
   }
 }
