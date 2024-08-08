@@ -89,9 +89,21 @@ public class QuadPayBridgeModule extends ReactContextBaseJavaModule implements A
         return "QuadPayBridge";
     }
 
+    @ReactMethod
+    public void addListener(String eventName) {
+        // Required for NativeEventEmitter
+    }
+
+    @ReactMethod
+    public void removeListeners(Integer count) {
+        // Required for NativeEventEmitter
+    }
+
+    @Override
     public void onNewIntent(Intent intent) {
     }
 
+    @Override
     public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
         if (this.isVirtual) {
             if (QuadPay.handleQuadPayActivityResults(
@@ -112,7 +124,6 @@ public class QuadPayBridgeModule extends ReactContextBaseJavaModule implements A
                 return;
             }
         }
-
     }
 
     @ReactMethod

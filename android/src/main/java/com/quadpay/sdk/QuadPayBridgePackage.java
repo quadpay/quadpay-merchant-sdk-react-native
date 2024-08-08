@@ -12,12 +12,12 @@ public class QuadPayBridgePackage implements ReactPackage {
 
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-        return Arrays.<NativeModule>asList(new QuadPayBridgeModule(reactContext));
+        return Arrays.asList(new QuadPayBridgeModule(reactContext));
     }
 
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
-        return Arrays.<ViewManager>asList(
+        return Arrays.asList(
                 new QuadPayWidgetManager(reactContext),
                 new QuadPayPaymentWidgetManager(reactContext)
         );
